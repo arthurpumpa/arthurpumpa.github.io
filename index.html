@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>React</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,8 +24,125 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>React</h1>
+					<h4>A JavaScript library for building user interfaces</h4>
+				</section>
+				<section>
+					<h2>What is React?</h2>
+
+					<p>How does React compare to Angular, Ember, Backbone, et al? How do you handle data? How do you contact the server? What the heck is JSX? What is a "component"?</p>
+
+					<br>
+
+					<p>Stop.</p>
+
+					<p>Stop it right now.</p>
+				</section>
+                <section>
+                    <img src="/img/stop.jpg" alt="stop">
+
+                    <h4>React is <b>MAINLY THE VIEW LAYER.</b></h4>
+                </section>
+				<section>
+
+					<h2>The BAD?</h2>
+
+					<p>You DON'T GET any of the following:</p>
+
+					<ul>
+						<li>
+							An event system (other than vanilla DOM events)
+						</li>
+						<li>Any AJAX capabilities whatsoever</li>
+						<li>Any form of a data layer</li>
+						<li>Promises</li>
+					    <li>Any application framework</li>
+					</ul>
+				</section>
+
+
+                <section>
+                    <section>
+                        <h2>State and lifecycle</h2>
+
+                        <p data-height="300" data-theme-id="0" data-slug-hash="amqdNA" data-default-tab="js,result" data-user="gaearon" data-embed-version="2" data-pen-title="Hello World in React" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/amqdNA/">Hello World in React</a> by Dan Abramov (<a href="https://codepen.io/gaearon">@gaearon</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                        <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                    </section>
+
+                    <section>
+                        <h2>Mostly used lifecycle methods</h2>
+
+                            <pre><code data-trim contenteditable>
+//Mounting
+constructor(props) //can be used to initialize state
+componentDidMount() //called once after first render, load data, start timers, add DOM listeners
+
+//Updating
+componentWillReceiveProps(nextProps) //you may compare this.props and nextProps and perform state change
+shouldComponentUpdate(nextProps, nextState) //called before update, used for optimization
+render()
+
+//Unmounting
+componentWillUnmount() //cancel network requests, invalidate timers, clean up listeners
+
+					    </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Gotchas</h2>
+
+                        Do not modify state
+                        <pre><code class="hljs" data-trim contenteditable>
+// Wrong
+this.state.comment = 'Hello';
+					    </code></pre>
+
+                        Async state update
+                        <pre><code class="hljs" data-trim contenteditable>
+// Wrong
+this.setState({
+  counter: this.state.counter + this.props.increment,
+});
+					    </code></pre>
+                    </section>
+                </section>
+
+
+
+                <section>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="xEmzGg" data-default-tab="js,result" data-user="gaearon" data-embed-version="2" data-pen-title="Toggle" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/xEmzGg/">Toggle</a> by Dan Abramov (<a href="https://codepen.io/gaearon">@gaearon</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                </section>
+
+                <section>
+                   <section>
+                       <h2>Should I Use React?</h2>
+                       <br>
+                       <p>Short answer: <b>yes.</b></p>
+                       <br>
+                       <p class="fragment">Long answer: probably, yes, for most things.</p>
+                   </section>
+
+                    <section>
+                        <h2>Here's why you should use React:</h2>
+
+                        <ul>
+                            <li class="fragment">Works great for teams, strongly enforcing UI and workflow patterns</li>
+                            <li class="fragment">UI code is readable and maintainable</li>
+                            <li class="fragment">Componentized UI is the future of web development, and you need to start doing it now.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Here's why you should think twice before you switch:</h2>
+
+                        <ul>
+                            <li class="fragment">If your application / website doesn't have very much dynamic page updating, you may be implementing a lot of code for a small benefit.</li>
+                            <li class="fragment">There's no one way to implement complex UI components (lightboxes, date pickers, etc). Finding the best libraries and patterns for your codebase will take some time.</li>
+                        </ul>
+                    </section>
+                </section>
 			</div>
 		</div>
 
@@ -37,6 +154,10 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
