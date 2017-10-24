@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>React</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>React</h1>
+            <h4>A JavaScript library for building user interfaces</h4>
+            <ul>
+                <li>Declarative</li>
+                <li>Component-Based</li>
+                <li>Learn Once, Write Anywhere</li>
+            </ul>
+        </section>
+        <section>
+            <!--<img src="/img/stop.jpg" alt="stop">-->
+
+            <h4>React is <b>MAINLY THE VIEW LAYER.</b></h4>
+        </section>
+        <section>
+            <section>
+                <h2>Virtual DOM</h2>
+            </section>
+
+        </section>
+        <section>
+            <section>
+                <h2>Elements</h2>
+                <p>
+                    <img src="img/element.PNG" alt="element">
+                </p>
+                <ul>
+                    <li>Elements are the smallest building blocks of React apps</li>
+                    <li>An element describes what you want to see on the screen</li>
+                    <li>it represents the UI at a certain point in time.</li>
+                </ul>
+            </section>
+            <section>
+                <p>Unlike browser DOM elements, React elements are <b>plain objects</b> , and are cheap to create</p>
+                <p>Immutable. Once you create an element, you can’t change its children or attributes. </p>
+            </section>
+            <section>
+                Elements are what components are “made of”
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Introducing JSX</h2>
+            </section>
+            <section>
+                <img src="img/jsxToCRE.PNG" alt="jsx">
+            </section>
+            <section>
+                <p>JSX may remind you of a template language, but it comes with the full power of JavaScript.</p>
+            </section>
+
+            <section>JSX produces React “elements”</section>
+        </section>
+        <section>
+            <section>
+                <h2>Component</h2>
+                <p>
+                    Components let you split the UI into independent, reusable pieces, and think about each piece in
+                    isolation.
+                </p>
+            </section>
+            <section>
+                <p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”)
+                    and return React elements describing what should appear on the screen.
+                </p>
+            </section>
+            <section>
+                <p>All React components must act like <b>pure functions </b>with respect to their props.</p>
+            </section>
+        </section>
+        <section>
+            <h3>Component types</h3>
+            <p>
+                React has a few different kinds of components
+            </p>
+            <ul>
+                <li>Functional/Stateless</li>
+                <li>Class Components/Stateful</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Props</h2>
+            <ul>
+                <li>Object argument with data</li>
+                <li>Read-Only</li>
+            </ul>
+        </section>
+        <section>
+            <section>
+                <h2>State</h2>
+                <p>
+                    State is similar to props, but it is private and fully controlled by the component.
+                </p>
+                <p>A feature available only to classes.</p>
+            </section>
+            <section>
+                <h3>There are three things you should know about setState().</h3>
+            </section>
+            <section>
+                <p> Do Not Modify State Directly</p>
+                <img src="/img/wrongStateChange.PNG" alt="state change">
+                <img src="/img/goodStateChange.PNG" alt="state change">
+            </section>
+            <section>
+                <p>State Updates May Be Asynchronous</p>
+                <small>React may batch multiple setState() calls into a single update for performance.</small>
+                <img src="img/prevStateAndProps.PNG" alt="prevStateProps">
+                <img src="img/goodPrevStateChange.png" alt="prevStateProps">
+            </section>
+            <section>
+                <p>State Updates are Merged</p>
+                <img src="img/stateMege.PNG" alt="mege">
+                <img src="img/stateMergeExample.PNG" alt="merge">
+                <small>Then you can update them independently with separate setState() calls</small>
+            </section>
+            <section>
+                <p>State is often called local or encapsulated. It is not accessible to any component other than the one
+                    that owns and sets it.</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Handling Events</h2>
+                <p>Handling events with React elements is very similar to handling events on DOM elements. There are
+                    some syntactic differences</p>
+            </section>
+            <section>
+                <ul>
+                    <li>React events are named using camelCase, rather than lowercase.</li>
+                    <li>With JSX you pass a function as the event handler, rather than a string.</li>
+                </ul>
+                <img src="img/eventAsString.PNG" alt="event string">
+                <br/>
+                <p>React way</p>
+                <img src="img/eventAsFun.PNG" alt="event function">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Lifecycle hooks.</h2>
+            </section>
+            <section>
+                <h3>Mounting</h3>
+                constructor()<br>
+                componentWillMount()<br>
+                render()<br>
+                componentDidMount()<br>
+            </section>
+            <section>
+                <h3>Updating</h3>
+                componentWillReceiveProps(nextProps)<br>
+                shouldComponentUpdate(nextProps, nextState)<br>
+                componentWillUpdate(nextProps,nextState)<br>
+                render()<br>
+                componentDidUpdate(prevProps,prevState)<br>
+            </section>
+            <section>
+                <h2>Unmounting</h2>
+                componentWillUnmount()
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Lists and Keys</h2>
+                <img src="img/keys.PNG" alt="keys">
+
+            </section>
+            <section>
+                <p>Keys help React identify which items have changed, are added, or are removed.
+                    Keys should be given to the elements inside the array to give the elements a stable identity</p>
+            </section>
+            <section>
+                <p>Keys Must Only Be Unique Among Siblings</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Refs and the DOM</h2>
+            </section>
+            <!--<section>-->
+                <!--<p>To modify a child, you re-render it with new props.-->
+                    <!--However, there are a few cases where you need to imperatively modify a child outside of the typical-->
+                    <!--dataflow.-->
+                    <!--The child to be modified could be an instance of a React component, or it could be a DOM element.-->
+                    <!--For both of these cases, React provides an escape hatch.</p>-->
+            <!--</section>-->
+            <section>
+                <h3>When to Use Refs</h3>
+                <ul>
+                    <li>Managing focus, text selection, or media playback.</li>
+                    <li>Triggering imperative animations.</li>
+                    <li>Integrating with third-party DOM libraries.</li>
+                </ul>
+            </section>
+            <section>
+                <p>Avoid using refs for anything that can be done declaratively.</p>
+
+                <small>For example, instead of exposing open() and close() methods on a Dialog component, pass an isOpen
+                    prop to it.</small>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Context</h2>
+            </section>
+            <section>
+                <p>
+                    In some cases, you want to pass data through the component tree without having to pass the props
+                    down manually at every level.
+                    You can do this directly in React with the powerful “context” API.
+                </p>
+            </section>
+            <section>
+                <h3>Why Not To Use Context</h3>
+                <p>
+                    If you want your application to be stable, don’t use context. It is an experimental API and it is
+                    likely to break in future releases of React.
+                </p>
+            </section>
+            <section>
+                <ul>
+                    <li>Redux</li>
+                    <li>Mobx</li>
+                </ul>
+            </section>
+        </section>
+        <!--<section>-->
+
+        <!--<h2>The BAD?</h2>-->
+
+        <!--<p>You DON'T GET any of the following:</p>-->
+
+        <!--<ul>-->
+        <!--<li>-->
+        <!--An event system (other than vanilla DOM events)-->
+        <!--</li>-->
+        <!--<li>Any AJAX capabilities whatsoever</li>-->
+        <!--<li>Any form of a data layer</li>-->
+        <!--<li>Promises</li>-->
+        <!--<li>Any application framework</li>-->
+        <!--</ul>-->
+        <!--</section>-->
+
+
+        <!--<section>-->
+        <!--<section>-->
+        <!--<h2>State and lifecycle</h2>-->
+
+        <!--<p data-height="300" data-theme-id="0" data-slug-hash="amqdNA" data-default-tab="js,result"-->
+        <!--data-user="gaearon" data-embed-version="2" data-pen-title="Hello World in React" class="codepen">See-->
+        <!--the Pen <a href="https://codepen.io/gaearon/pen/amqdNA/">Hello World in React</a> by Dan Abramov (<a-->
+        <!--href="https://codepen.io/gaearon">@gaearon</a>) on <a href="https://codepen.io">CodePen</a>.-->
+        <!--</p>-->
+        <!--<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>-->
+        <!--</section>-->
+
+        <!--&lt;!&ndash;<section>&ndash;&gt;-->
+        <!--&lt;!&ndash;<h2>Mostly used lifecycle methods</h2>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<pre><code data-trim contenteditable>&ndash;&gt;-->
+        <!--&lt;!&ndash;//Mounting&ndash;&gt;-->
+        <!--&lt;!&ndash;constructor(props) //can be used to initialize state&ndash;&gt;-->
+        <!--&lt;!&ndash;componentDidMount() //called once after first render, load data, start timers, add DOM listeners&ndash;&gt;-->
+
+        <!--&lt;!&ndash;//Updating&ndash;&gt;-->
+        <!--&lt;!&ndash;componentWillReceiveProps(nextProps) //you may compare this.props and nextProps and perform state change&ndash;&gt;-->
+        <!--&lt;!&ndash;shouldComponentUpdate(nextProps, nextState) //called before update, used for optimization&ndash;&gt;-->
+        <!--&lt;!&ndash;render()&ndash;&gt;-->
+
+        <!--&lt;!&ndash;//Unmounting&ndash;&gt;-->
+        <!--&lt;!&ndash;componentWillUnmount() //cancel network requests, invalidate timers, clean up listeners&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</code></pre>&ndash;&gt;-->
+        <!--&lt;!&ndash;</section>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<section>&ndash;&gt;-->
+        <!--&lt;!&ndash;<h2>Gotchas</h2>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;Do not modify state&ndash;&gt;-->
+        <!--&lt;!&ndash;<pre><code class="hljs" data-trim contenteditable>&ndash;&gt;-->
+        <!--&lt;!&ndash;// Wrong&ndash;&gt;-->
+        <!--&lt;!&ndash;this.state.comment = 'Hello';&ndash;&gt;-->
+        <!--&lt;!&ndash;</code></pre>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;Async state update&ndash;&gt;-->
+        <!--&lt;!&ndash;<pre><code class="hljs" data-trim contenteditable>&ndash;&gt;-->
+        <!--&lt;!&ndash;// Wrong&ndash;&gt;-->
+        <!--&lt;!&ndash;this.setState({&ndash;&gt;-->
+        <!--&lt;!&ndash;counter: this.state.counter + this.props.increment,&ndash;&gt;-->
+        <!--&lt;!&ndash;});&ndash;&gt;-->
+        <!--&lt;!&ndash;</code></pre>&ndash;&gt;-->
+        <!--&lt;!&ndash;</section>&ndash;&gt;-->
+        <!--</section>-->
+
+
+        <!--<section>-->
+        <!--<p data-height="265" data-theme-id="0" data-slug-hash="xEmzGg" data-default-tab="js,result"-->
+        <!--data-user="gaearon" data-embed-version="2" data-pen-title="Toggle" class="codepen">See the Pen <a-->
+        <!--href="https://codepen.io/gaearon/pen/xEmzGg/">Toggle</a> by Dan Abramov (<a-->
+        <!--href="https://codepen.io/gaearon">@gaearon</a>) on <a href="https://codepen.io">CodePen</a>.</p>-->
+        <!--<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>-->
+        <!--</section>-->
+
+        <!--<section>-->
+        <!--<section>-->
+        <!--<h2>Should I Use React?</h2>-->
+        <!--<br>-->
+        <!--<p>Short answer: <b>yes.</b></p>-->
+        <!--<br>-->
+        <!--<p class="fragment">Long answer: probably, yes, for most things.</p>-->
+        <!--</section>-->
+
+        <!--<section>-->
+        <!--<h2>Here's why you should use React:</h2>-->
+
+        <!--<ul>-->
+        <!--<li class="fragment">Works great for teams, strongly enforcing UI and workflow patterns</li>-->
+        <!--<li class="fragment">UI code is readable and maintainable</li>-->
+        <!--<li class="fragment">Componentized UI is the future of web development, and you need to start doing-->
+        <!--it now.-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--</section>-->
+
+        <!--<section>-->
+        <!--<h2>Here's why you should think twice before you switch:</h2>-->
+
+        <!--<ul>-->
+        <!--<li class="fragment">If your application / website doesn't have very much dynamic page updating, you-->
+        <!--may be implementing a lot of code for a small benefit.-->
+        <!--</li>-->
+        <!--<li class="fragment">There's no one way to implement complex UI components (lightboxes, date-->
+        <!--pickers, etc). Finding the best libraries and patterns for your codebase will take some time.-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--</section>-->
+        <!--</section>-->
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
