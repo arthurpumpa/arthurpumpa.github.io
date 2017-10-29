@@ -43,6 +43,12 @@
                     You can do this directly in React with the powerful “context” API.
                 </p>
             </section>
+            <section>
+                <h2>Why Not To Use Context</h2>
+            </section>
+            <section>
+                <script src="https://gist.github.com/staparix/fc586ff024bc5f8e4a22c2222239f48f.js"></script>
+            </section>
         </section>
 
         <section>
@@ -189,6 +195,52 @@
             </section>
             <section>
                 <script src="https://gist.github.com/f0zze/296c1c667d7e58eb4937d03510996a0f.js"></script>
+            </section>
+            <section>
+                <section>
+                    <h2>Redux</h2>
+                </section>
+                <section>
+                    <p>Redux attempts to make state mutations predictable by imposing certain restrictions on how and
+                        when updates can happen.</p>
+                </section>
+                <section>
+                    <h2>Three Principles</h2>
+                    <ul>
+                        <li>Single source of truth</li>
+                        <li>State is read-only</li>
+                        <li>Changes are made with pure functions</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h3>Single source of truth</h3>
+                        <p>The state of your whole application is stored in an object tree within a single store.</p>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Easy to create universal/isomorphic apps</li>
+                            <li>Easier to debug or inspect an application;</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>State is read-only</h2>
+                    </section>
+                    <section>
+                        <p>
+                            The only way to change the state is to emit an action, an object describing what
+                            happened.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section></section>
+                    <section>
+                        <p>To specify how the state tree is transformed by actions, you write pure reducers.</p>
+                    </section>
+                </section>
             </section>
         </section>
     </div>
