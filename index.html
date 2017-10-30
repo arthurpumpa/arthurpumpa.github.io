@@ -120,127 +120,121 @@
             <section>
                 <script src="https://gist.github.com/f0zze/a53cac3a360d819c365eda7f23038b47.js"></script>
             </section>
-            <section>
-                <h3>Inheritance Inversion</h3>
-                <p>
-                    <script src="https://gist.github.com/f0zze/0d4068c4f3f3c85b133321adcf81ee22.js"></script>
-                </p>
-            </section>
-            <section>
-                <p>
-                    Inheritance Inversion allows the HOC to have access to the WrappedComponent instance via this,
-                    which means it has access to the state, props, component lifecycle hooks and the render method.
-                </p>
-            </section>
-            <section>
-                <p>
-                    Inheritance Inversion High Order Components don’t have a guaranty of having the full children tree
-                    resolved.
-                </p>
-            </section>
-            <section>
-                <h3>What can you do with Inheritance Inversion?</h3>
-                <ul>
-                    <li>Render Highjacking</li>
-                    <li>Manipulating state</li>
-                </ul>
-            </section>
-            <section>
-                <h3>Render Highjacking</h3>
-                <p>
-                    It is called Render Highjacking because the HOC takes control of the render output of the
-                    WrappedComponent and can do all sorts of stuff with it.
-                </p>
-            </section>
-            <section>
-                <h3>In Render Highjacking you can:</h3>
-                <ul>
-                    <li>Read, add, edit, remove props in any of the React Elements outputted by render</li>
-                    <li>Read, and modify the React Elements tree outputted by render</li>
-                    <li>Conditionally display the elements tree</li>
-                    <li>Wrapping the element’s tree for styling purposes (as shown in Props Proxy)</li>
-                </ul>
-            </section>
-            <section>
-                <p>You cannot edit or create props of the WrappedComponent instance,
-                    because a React Component cannot edit the props it receives,
-                    but you can change the props of the elements that are outputted from the render method.
-                </p>
-            </section>
-            <section>
-                <script src="https://gist.github.com/f0zze/e6d0dc70fd2ea90fdb0858c9cc646695.js"></script>
-            </section>
-            <section>
-                <small>Modifying the React Elements tree outputted by render.</small>
-                <p>
-                    <script src="https://gist.github.com/f0zze/0568a06e296c4c9cf61cb69dbebcd3ba.js"></script>
-                </p>
-            </section>
-            <section>
-                <h3>Manipulating state</h3>
-                <p>The HOC can read, edit and delete state of the WrappedComponent instance, and you can also add more
-                    state if you need to</p>
+            <!--<section>-->
+                <!--<h3>Inheritance Inversion</h3>-->
+                <!--<p>-->
+                    <!--<script src="https://gist.github.com/f0zze/0d4068c4f3f3c85b133321adcf81ee22.js"></script>-->
+                <!--</p>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<p>-->
+                    <!--Inheritance Inversion allows the HOC to have access to the WrappedComponent instance via this,-->
+                    <!--which means it has access to the state, props, component lifecycle hooks and the render method.-->
+                <!--</p>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<p>-->
+                    <!--Inheritance Inversion High Order Components don’t have a guaranty of having the full children tree-->
+                    <!--resolved.-->
+                <!--</p>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<h3>What can you do with Inheritance Inversion?</h3>-->
+                <!--<ul>-->
+                    <!--<li>Render Highjacking</li>-->
+                    <!--<li>Manipulating state</li>-->
+                <!--</ul>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<h3>Render Highjacking</h3>-->
+                <!--<p>-->
+                    <!--It is called Render Highjacking because the HOC takes control of the render output of the-->
+                    <!--WrappedComponent and can do all sorts of stuff with it.-->
+                <!--</p>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<h3>In Render Highjacking you can:</h3>-->
+                <!--<ul>-->
+                    <!--<li>Read, add, edit, remove props in any of the React Elements outputted by render</li>-->
+                    <!--<li>Read, and modify the React Elements tree outputted by render</li>-->
+                    <!--<li>Conditionally display the elements tree</li>-->
+                    <!--<li>Wrapping the element’s tree for styling purposes (as shown in Props Proxy)</li>-->
+                <!--</ul>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<p>You cannot edit or create props of the WrappedComponent instance,-->
+                    <!--because a React Component cannot edit the props it receives,-->
+                    <!--but you can change the props of the elements that are outputted from the render method.-->
+                <!--</p>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<script src="https://gist.github.com/f0zze/e6d0dc70fd2ea90fdb0858c9cc646695.js"></script>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<small>Modifying the React Elements tree outputted by render.</small>-->
+                <!--<p>-->
+                    <!--<script src="https://gist.github.com/f0zze/0568a06e296c4c9cf61cb69dbebcd3ba.js"></script>-->
+                <!--</p>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<h3>Manipulating state</h3>-->
+                <!--<p>The HOC can read, edit and delete state of the WrappedComponent instance, and you can also add more-->
+                    <!--state if you need to</p>-->
 
+            <!--</section>-->
+            <!--<section>-->
+                <!--<h2>But</h2>-->
+                <!--<b>Don't do it!!!!</b>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<h3>Naming</h3>-->
+                <!--<p>-->
+                    <!--When wrapping a component with an HOC you lose the original WrappedComponent’s name which might-->
+                    <!--impact you when developing and debugging.-->
+                <!--</p>-->
+            <!--</section>-->
+            <!--<section>-->
+                <!--<script src="https://gist.github.com/f0zze/296c1c667d7e58eb4937d03510996a0f.js"></script>-->
+            <!--</section>-->
+        </section>
+        <section>
+            <section>
+                <h2>Redux</h2>
             </section>
             <section>
-                <h2>But</h2>
-                <b>Don't do it!!!!</b>
+                <p>Redux attempts to make state mutations predictable by imposing certain restrictions on how and
+                    when updates can happen.</p>
             </section>
             <section>
-                <h3>Naming</h3>
-                <p>
-                    When wrapping a component with an HOC you lose the original WrappedComponent’s name which might
-                    impact you when developing and debugging.
-                </p>
-            </section>
-            <section>
-                <script src="https://gist.github.com/f0zze/296c1c667d7e58eb4937d03510996a0f.js"></script>
+                <h2>Three Principles</h2>
+                <ul>
+                    <li>Single source of truth</li>
+                    <li>State is read-only</li>
+                    <li>Changes are made with pure functions</li>
+                </ul>
             </section>
             <section>
                 <section>
-                    <h2>Redux</h2>
+                    <h3>Single source of truth</h3>
+                    <p>The state of your whole application is stored in an object tree within a single store.</p>
                 </section>
                 <section>
-                    <p>Redux attempts to make state mutations predictable by imposing certain restrictions on how and
-                        when updates can happen.</p>
-                </section>
-                <section>
-                    <h2>Three Principles</h2>
                     <ul>
-                        <li>Single source of truth</li>
-                        <li>State is read-only</li>
-                        <li>Changes are made with pure functions</li>
+                        <li>Easy to create universal/isomorphic apps</li>
+                        <li>Easier to debug or inspect an application;</li>
                     </ul>
                 </section>
-                <section>
-                    <section>
-                        <h3>Single source of truth</h3>
-                        <p>The state of your whole application is stored in an object tree within a single store.</p>
-                    </section>
-                    <section>
-                        <ul>
-                            <li>Easy to create universal/isomorphic apps</li>
-                            <li>Easier to debug or inspect an application;</li>
-                        </ul>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h2>State is read-only</h2>
-                    </section>
-                    <section>
-                        <p>
-                            The only way to change the state is to emit an action, an object describing what
-                            happened.
-                        </p>
-                    </section>
-                </section>
-                <section>
-                    <section></section>
-                    <section>
-                        <p>To specify how the state tree is transformed by actions, you write pure reducers.</p>
-                    </section>
-                </section>
+            </section>
+            <section>
+                <h2>State is read-only</h2>
+                <p>
+                    The only way to change the state is to emit an action, an object describing what
+                    happened.
+                </p>
+            </section>
+            <section>
+                <h2>Changes are made with pure function</h2>
+                <p>To specify how the state tree is transformed by actions, you write pure reducers.</p>
             </section>
         </section>
     </div>
